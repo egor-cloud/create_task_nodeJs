@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <a href="/"><p>Создать задачу</p></a>
+             <h1>Общее:</h1>
+            <p>Обработчиков всего: 3</p>
+            <p>Ожидающие выполнения задачи: {{orders.length}}</p>
+            <p>Количество выполненных задач: {{completeTask.length}}</p>
+            {{#length task.length 0}}
+                <p>Свободных обработчиков: 3</p>
+                <p>Занятых обработчиков: 0</p>
+            {{/length}}
+              {{#length task.length 2}}
+                <p>Свободных обработчиков: 1</p>
+                <p>Занятых обработчиков: 2</p>
+            {{/length}}
+              {{#length task.length 1}}
+                <p>Свободных обработчиков: 2</p>
+                <p>Занятых обработчиков: 1</p>
+            {{/length}}
+              {{#length task.length 3}}
+                <p>Свободных обработчиков: 0</p>
+                <p>Занятых обработчиков: 3</p>
+            {{/length}}
+            {{#if orders.length}}
+                <h1>Задачи ожидающие обработки:</h1>
+            {{#each orders}}
+                <p>id: {{id}}</p>
+                <p>Сложность: {{complexity}}</p>
+                <p>Приоритет: {{priority}}</p>
+                <p>время создания: {{time}}</p>
+                <p>--------------------------------</p>
+            {{/each}}
+            {{else}}
+                <h1>Нет задач</h1>
+            {{/if}}  
+        </div>
+    </div>
+</div>

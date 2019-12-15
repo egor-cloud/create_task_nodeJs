@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+       <h1>Cоздание задачи</h1>
+       <br>
+            <form action="/" method="POST">
+
+                <h2>Сложность</h2>
+                <p><input name="complexity" type="radio" value="1">Высокая(30 sec)</p>
+                <p><input name="complexity" type="radio" value="2">Средняя(20 sec)</p>
+                <p><input name="complexity" type="radio" value="3" checked>Низкая(10 sec)</p>
+
+                <h2>Приоритет</h2>
+                <p><input name="priority" type="radio" value="1">Высокий(1)</p>
+                <p><input name="priority" type="radio" value="2">Средний(2)</p>
+                <p><input name="priority" type="radio" value="3" checked>Низкий(3)</p>
+
+                <button type="submit" class="btn btn-outline-success" value="click">Выбрать</button>
+            </form>
+            <br>
+            <a href="/task"><p>Просмотр задач</p></a>
+        </div>
+    </div>
+</div>
