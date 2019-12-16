@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+    
+    install:
+        build: ./installTask_nodeJs
+        container_name: install
+        ports: 
+            - "3000:3000"
+        volumes: 
+            - ./data:/../../data
+        command: npm run start
+
+    handler:
+        build: ./handlerTask_nodeJs
+        container_name: handler
+        volumes: 
+            - ./data:/../../data
+        command: node index
+        depends_on: 
+            - install
+
+    complete:
+        build: ./completeTask_nodeJs
+        container_name: complete
+        volumes: 
+            - ./data:/../../data
+        command: node index
+        depends_on: 
+            - install
+            - handler
